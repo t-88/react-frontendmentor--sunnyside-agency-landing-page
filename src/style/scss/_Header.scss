@@ -1,0 +1,52 @@
+.Header {
+    position: relative;
+    background-color: $header;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    @include media("<=tablet") {
+        font-size: applyMath(18,12,$tablet,$phone);
+        height: fit-content;
+    }
+
+    &__Hero {
+        width: fit-content;
+        margin: 3rem auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        @include media("<=tablet") {
+            margin: 8% auto 0;
+        }
+        &__title {
+            @extend .upper;
+            font-family: 'Fraunces', serif;
+            color: white;
+            font-size: 2.8rem;
+            letter-spacing: 0.25em;
+            @include media("<=tablet") {
+                text-align: center;
+                font-size: 3em;
+                width: fit-content;
+                margin: auto;
+                margin-bottom: 7%;
+            }
+        }
+
+    }
+    &__img {
+        &--desktop {
+            width: max(59%,1030px);
+            display: block;
+            min-width: 0;
+            min-height: 0;
+            align-self: center;
+            @include media("<=tablet") { display: none; }
+        }
+        &--mobile {
+            @include media(">tablet") { display: none; }
+        }
+    }
+}

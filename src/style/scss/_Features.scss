@@ -1,0 +1,13 @@
+.Features {
+    @include media("<=tablet") {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+    &__container {
+        display: flex;
+        @include media("<=tablet") {
+            flex-direction: column;
+        }
+    }
+}

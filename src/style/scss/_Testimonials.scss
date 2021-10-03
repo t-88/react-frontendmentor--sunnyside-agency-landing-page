@@ -1,0 +1,75 @@
+.Testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include media(">tablet") {
+        font-size: applyMath(18,14,$pc,$tablet);
+        gap: 5.15vw;
+        margin: 7.7vw 0;
+    }
+    @include media("<=tablet") {
+        font-size: applyMath(18,14,$tablet,$phone);
+        gap: max(50px,5.15vw);
+        margin: max(50px,7.7vw) 0;
+    }
+    &__title {
+        @extend .upper;
+        font-family: "Fraunces", serif;
+        color: $grayish-blue;
+        font-size: 1.22em;
+        letter-spacing: 6px;
+        @include media("<=tablet") {
+            letter-spacing: 0.22em;
+            
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        width: max(730px,60%);
+        gap: 15px;
+
+        @include media("<=tablet") {
+            flex-direction: column;
+            align-self: center;
+            width: fit-content;
+            gap: 40px;
+        }
+    }
+}
+.Testimonial {
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1;
+    max-width: 350px;    
+    gap: 40px;
+    line-height: 1.8;
+    @include media("<=tablet") {
+        gap: 20px;
+        max-width: max(270px,50%);
+        align-self: center;
+    }
+    img {        
+        min-width: 0;
+        min-height: 0;
+        width: 4.45em;
+        border-radius: 100%;
+    }
+    &__text {
+        color: $very-dark-grayish;
+        font-weight: 900;
+    }
+    &__more {
+        &__name {
+            font-family: "Fraunces", serif;
+            font-weight: 900;
+            color: $very-dark-desaturated-blue;
+        }
+        &__jop {
+            color: $grayish-blue;
+        }
+    }
+}

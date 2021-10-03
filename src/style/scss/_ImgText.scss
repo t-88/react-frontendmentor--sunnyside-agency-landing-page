@@ -1,0 +1,48 @@
+.ImgText {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    font-size: applyMath(18,14,$pc,$tablet);
+    @include media("<=tablet") {
+        font-size: applyMath(20,14,$tablet,$phone);
+        max-height: max(470px,125vw);        
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+    &__img {
+        width: 100%;
+        display: block;
+        &--desktop {
+            @include media("<=tablet") {display: none;}
+        }
+        &--mobile {
+            @include media(">tablet") {display: none;}
+        }
+    }
+    &__text {
+        position: absolute;
+        bottom: max(135px,35%);
+        left: 50%;
+        transform: translateX(-50%);
+        width: max(305px,45%);
+        height: 0;
+        &--green { color: $dark-desaturated-cyan;}
+        &--blue { color: $dark-blue; }
+        @include media("<=tablet") {
+            width: max(295px,55%);
+            bottom: 30%;
+        }
+        h1 {
+            font-family: "Fraunces", serif;
+            font-weight: 900;
+            margin-bottom: 0.65em;
+            font-size: 2em;
+        }
+        p {
+            font-family: 'Barlow', sans-serif;
+            line-height: 1.5;
+            font-size: 1em;
+        }
+    }
+}

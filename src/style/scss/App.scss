@@ -1,0 +1,54 @@
+@import "global";
+@import "utils";
+@import "includeMedia";
+@import "shared";
+
+@import "Nav"; 
+@import "Header"; 
+@import "TextImg"; 
+@import "Features"; 
+@import "ImgText"; 
+@import "Testimonials"; 
+@import "Footer"; 
+
+
+html, body, #app {
+    width: 100%;
+    height: fit-content;
+    @include media("<=tablet") {
+        height: fit-content;
+    }
+}
+html {
+    font-size: 18px;
+    min-width: 320px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Gallery {
+    display: flex;
+    @include media("<=tablet") {
+        flex-wrap: wrap;
+    }
+    &__img {
+        min-width: 0;
+        min-height: 0;
+        &--desktop {
+            @include media("<=tablet") { display: none; }
+            flex: 1;
+        }
+        &--mobile {
+            @include media(">tablet") { display: none; }
+            flex: auto;
+            width: 50%;
+        }        
+    }
+}

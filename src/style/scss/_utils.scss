@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+.font--Barlow{
+    font-family: 'Barlow', sans-serif;
+}
+.upper {
+    text-transform: uppercase;
+}
+@function Rem($val) {
+    @return ($val / $font-size) * 1rem
+}

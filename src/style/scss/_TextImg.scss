@@ -1,0 +1,98 @@
+.TextImg {
+    display: flex;
+    @include media(">tablet") {
+        font-size: applyMath(18,11,$pc,$tablet);
+        &--reverse{ flex-direction: row-reverse;}
+    }
+    @include media("<=tablet") {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 60px;
+        font-size: applyMath(18,11,$tablet,$phone);
+    } 
+
+    &__container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__text {
+            display: flex;
+            flex-direction: column;
+            width: #{"max(300px,52%)"};
+            gap: 1.5em;
+            @include media("<=tablet") {
+                width: max(220px,50%);
+                text-align: center;
+                align-items: center;
+                gap: 1.5em;
+            } 
+            h1 {
+                font-family: "Fraunces", serif;
+                font-weight: 900;
+                font-size: 2.35em;
+                color: $very-dark-desaturated-blue;
+                @include media("<=tablet") {
+                    font-size: max(25px,2em);
+                }
+            }
+            &__description {
+                font-family: 'Barlow', sans-serif;
+                font-size: #{"max(13.5px,1.03em)"};
+                line-height: 1.5;
+                color: $dark-grayish-blue;
+                font-weight: bold;
+                @include media("<=tablet") {
+                    font-size: max(14px,1em);
+                }
+            }
+            &__learnMore {
+                font-family: "Fraunces", serif;
+                color: $very-dark-desaturated-blue;
+                font-size: Rem(16px);
+                font-weight: 900;
+                width: fit-content;
+                position: relative;
+                p {
+                    @extend .upper;
+                    width: fit-content;
+                    position: relative;
+                    z-index: 2;
+                    font-size: 1em;
+                    @include media("<=tablet") {
+                        font-size: 1em;
+                    }
+                }
+                span {
+                    position: absolute;
+                    width: 110%;
+                    height: 11px;
+                    left: 50%;
+                    transform: translate(-50%, -70%);
+                    display: block;
+                    border-radius: 100rem;       
+                    background-color: $yellow;
+                    z-index: 1;
+                }
+                &--diff {
+                    span {
+                        background-color: $soft-red;
+                    }
+                }        
+            }
+        }
+    }
+    .TextImg__img {
+        &--desktop {
+            @include media("<=tablet") { display: none;}
+        }
+        &--mobile {
+            @include media(">tablet") { display: none;}
+        }        
+        min-width: 0;
+        flex: 1;
+    }
+
+
+}

@@ -1,0 +1,34 @@
+.Footer {
+    font-family: 'Barlow', sans-serif;
+    color: $dark-moderate;
+    background: $footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 0;
+    ul {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 30px;
+        li {
+            list-style: none;
+            cursor: pointer;
+            &:hover { color: $white; }
+        }
+    }
+    svg  {
+        cursor: pointer;
+        path { fill: #2d7466; }
+    }
+    &__imgs {
+        svg {
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+            &:hover {
+                path { fill: $white; }
+            }
+        }
+    }
+}
